@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <p>kore?</p>
-
+    <router-view/>
   </div>
 </template>
 
