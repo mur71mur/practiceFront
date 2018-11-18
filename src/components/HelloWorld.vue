@@ -2,6 +2,36 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <p>aaa</p>
+    <div class="animation">
+      <p>スクロールでふわっと表示させたい要素</p>
+      <p>スクロールでふわっと表示させたい要素</p>
+      <p>スクロールでふわっと表示させたい要素</p>
+      <p>スクロールでふわっと表示させたい要素</p>
+      <p>スクロールでふわっと表示させたい要素</p>
+      <p>スクロールでふわっと表示させたい要素</p>
+     <p>スクロールでふわっと表示させたい要素</p>
+    </div>
     <ul>
       <li>
         <a
@@ -110,4 +140,43 @@ li {
 a {
   color: #42b983;
 }
+p {
+  color: blue;
+}
+.fadeInDown {
+ -webkit-animation-fill-mode:both;
+ -ms-animation-fill-mode:both;
+ animation-fill-mode:both;
+ -webkit-animation-duration:1s;
+ -ms-animation-duration:1s;
+ animation-duration:1s;
+ -webkit-animation-name: fadeInDown;
+ animation-name: fadeInDown;
+ visibility: visible !important;
+}
+@-webkit-keyframes fadeInDown {
+ 0% { opacity: 0; -webkit-transform: translateY(200px); }
+ 100% { opacity: 1; -webkit-transform: translateY(0); }
+}
+@keyframes fadeInDown {
+ 0% { opacity: 0; -webkit-transform: translateY(200px); -ms-transform: translateY(200px); transform: translateY(200px); }
+ 100% { opacity: 1; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
+}
 </style>
+
+<script>
+jQuery(function(){
+jQuery('.animation').css('visibility','hidden');
+jQuery(window).scroll(function(){
+ var windowHeight = jQuery(window).height(),
+     topWindow = jQuery(window).scrollTop();
+ jQuery('.animation').each(function(){
+  var targetPosition = jQuery(this).offset().top;
+  if(topWindow > targetPosition - windowHeight + 100){
+   jQuery(this).addClass("fadeInDown");
+  }
+ });
+});
+});
+
+</script>
